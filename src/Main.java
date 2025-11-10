@@ -7,6 +7,7 @@ public class Main {
         Random random = new Random();
         for (int i = 0; i < array.length; i++)
             array[i] = random.nextInt(10);
-        Ordenacion.cronometrar(array);
+//        Ordenacion.cronometrar(array);
+        Ordenacion.seleccionar(array);
     }
 }

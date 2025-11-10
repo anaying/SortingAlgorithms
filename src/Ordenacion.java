@@ -73,6 +73,17 @@ public class Ordenacion {
             System.out.print(key + ": ");
             System.out.println(fin - ini + "ms");
         }
+    }
 
+    public static void seleccionar(int[] array) {
+        System.out.println("\nVector: " + Arrays.toString(array));
+        HashMap<String, Function<int[], int[]>> methods = methods();
+        String[] names = methods.keySet().toArray(new String[0]);
+        for (int i = 0; i < names.length;) {
+            System.out.println(i + 1 + ": " + names[i++]);
+        }
+        System.out.print("Selecciona una opción: ");
+        short op = (short) (new Scanner(System.in).nextShort() - 1);
+        System.out.print("\nMétodo seleccionado: " + names[op] + "\nVector ordenado: " + Arrays.toString(methods.get(names[op]).apply(array)));
     }
 }
